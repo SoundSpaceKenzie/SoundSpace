@@ -1,5 +1,12 @@
+import { TLoginValues } from '../../schemas/UserSchema';
+
 export interface IUserContextProps {
   children: React.ReactNode;
+}
+
+export interface IUserContext {
+  UserLogin: (data: TLoginValues) => Promise<void>;
+  User: IUser;
 }
 
 export interface IUser {
@@ -7,4 +14,11 @@ export interface IUser {
   name: string;
   avatar: string;
   id: number;
+}
+
+export interface IDataLoginRequest {
+  data: {
+    accessToken: string;
+    user: IUser;
+  };
 }
