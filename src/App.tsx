@@ -1,9 +1,10 @@
 
-function App() {
+import Rout from './Routes';
 
+function App() {
   return (
     <>
-      <h2>soundSpace</h2>
+      <Rout />
     </>
   );
 }
