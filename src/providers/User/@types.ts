@@ -1,4 +1,4 @@
-import { TLoginValues } from '../../schemas/UserSchema';
+import { TLoginValues } from '../../schemas/UserSchemas';
 
 export interface IUserContextProps {
   children: React.ReactNode;

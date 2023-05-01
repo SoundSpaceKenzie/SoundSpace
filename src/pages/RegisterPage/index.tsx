@@ -1,11 +1,13 @@
 import { FormRegister } from '../../components/Form/Form';
 
+import Logo from '../../assets/imgs/logoSpaceSound.svg';
+
 export const RegisterPage = () => {
   return (
     <main>
       <div>
         <div>
-          <img src='../assets/logoSpaceSound.svg' alt='logoSpaceSound' />
+          <img src={Logo} alt='logoSpaceSound' />
         </div>
         <div>
           <header>
