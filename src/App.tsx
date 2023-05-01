@@ -1,11 +1,9 @@
-import { useState } from 'react';
+import Rout from './Routes';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h2>soundSpace</h2>
+      <Rout />
     </>
   );
 }
