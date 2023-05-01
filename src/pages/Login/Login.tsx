@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { UserContext } from '../../providers/User/UserContext';
 import { useContext } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { LoginSchema, TLoginValues } from '../../schemas/UserSchema';
+import { LoginSchema, TLoginValues } from '../../schemas/UserSchemas';
 
 const Login = () => {
   const {
