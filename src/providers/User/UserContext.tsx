@@ -6,7 +6,7 @@ import {
   IDataLoginRequest,
 } from './@types';
 import Api from '../../services/Api';
-import { TLoginValues } from '../../schemas/UserSchema';
+import { TLoginValues } from '../../schemas/UserSchemas';
 
 export const UserContext = createContext({} as IUserContext);
 
