@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -8,9 +8,12 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     list-style: none;
     text-decoration: none;
+
 }
 
 :root{
+  font-family: 'Inter', sans-serif;
+  
   --color-primary:#1A001D;
   --color-secundary:#11DCDA;
   --grey-5:#191C1F;
@@ -24,4 +27,4 @@ export const GlobalStyle = createGlobalStyle`
 button{
   cursor: pointer;
 }
-`
+`;

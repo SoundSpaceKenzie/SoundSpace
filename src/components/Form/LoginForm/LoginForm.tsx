@@ -42,7 +42,7 @@ const LoginForm = () => {
         error={errors?.password?.message}
         {...register('password')}
       />
-      <Button text={'Entrar'} backgroundC={'purple'} textColor={'black'} />
+      <Button text={'Entrar'} backgroundC={'--grey-2'} textColor={'--grey-3'} />
     </StyledFormLogin>
   );
 };

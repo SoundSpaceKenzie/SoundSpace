@@ -8,10 +8,12 @@ interface IStyledButton {
 export const StyledButton = styled.button<IStyledButton>`
   width: 100%;
   height: 44px;
-  background-color: ${({ backgroundC }) => backgroundC};
+  background-color: ${({ backgroundC }) => `var(${backgroundC})`};
   border: none;
   border-radius: 5px;
-  color: ${({ textColor }) => textColor};
+  color: ${({ textColor }) => `var(${textColor})`};
   font-weight: 600;
   font-size: 0.875em;
+
+  cursor: pointer;
 `;
