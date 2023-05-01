@@ -1,18 +1,33 @@
 import { createContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { IUserContextProps } from './@types';
+import {
+  IUser,
+  IUserContext,
+  IUserContextProps,
+  IDataLoginRequest,
+} from './@types';
+import Api from '../../services/Api';
+import { TLoginValues } from '../../schemas/UserSchema';
 
-export const UserContext = createContext({});
+export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IUserContextProps) => {
-  const [User, setUser] = useState();
+  const [User, setUser] = useState<IUser>(Object);
 
-  const UserLogin = async () => {
-    console.log('test');
+  const UserLogin = async (dataForm: TLoginValues) => {
+    try {
+      const { data }: IDataLoginRequest = await Api.post(
+        'https://soundspaceapi.onrender.com/login',
+        dataForm
+      );
+      setUser(data.user);
+      localStorage.setItem('@SoundSpace:Token', data.accessToken);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <UserContext.Provider value={{ setUser, UserLogin }}>
+    <UserContext.Provider value={{ UserLogin, User }}>
       {children}
     </UserContext.Provider>
   );
