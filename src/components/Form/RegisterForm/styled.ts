@@ -8,5 +8,6 @@ gap: 1em;
 label{
   font-size: 0.875em;
   color: var(--grey-0);
+  
 }
 `

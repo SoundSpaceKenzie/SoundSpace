@@ -1,4 +1,4 @@
-import { TLoginValues } from '../../schemas/UserSchemas';
+import { TLoginValues, TRegisterValues } from '../../schemas/UserSchemas';
 
 export interface IUserContextProps {
   children: React.ReactNode;
@@ -22,3 +22,5 @@ export interface IDataLoginRequest {
     user: IUser;
   };
 }
+
+export type IUserRegister = (data: TRegisterValues) => Promise<void>;

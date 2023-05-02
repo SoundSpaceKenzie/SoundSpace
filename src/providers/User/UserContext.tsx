@@ -9,11 +9,14 @@ import {
 import Api from '../../services/Api';
 import { TLoginValues } from '../../schemas/UserSchemas';
 import { AxiosError } from 'axios';
+//import { useNavigate } from 'react-router-dom';
 
 export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IUserContextProps) => {
   const [User, setUser] = useState<IUser>(Object);
+
+  //const navigate = useNavigate()
 
   const UserLogin = async (dataForm: TLoginValues) => {
     try {
@@ -27,6 +30,16 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       }
     }
   };
+
+  // const UserRegister= async (data:TRegisterValues)=>{
+  // try {
+  //   const response = await Api.post('/register', data)
+  //   toast.success('Conta criada com sucesso!');
+  //   navigate('/')
+  // } catch (error) {
+  //   toast.error('E-mail já existe');
+  // }
+  // }
 
   return (
     <UserContext.Provider value={{ UserLogin, User }}>
