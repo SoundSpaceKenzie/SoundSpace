@@ -4,6 +4,9 @@ import { StyledFormRegister } from './styled';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { RegisterSchema, TRegisterValues } from '../../../schemas/UserSchemas';
+import { UserContext } from '../../../providers/User/UserContext';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 export const FormRegister = () => {
   const {
@@ -12,10 +15,11 @@ export const FormRegister = () => {
     formState: { errors },
   } = useForm<TRegisterValues>({ resolver: zodResolver(RegisterSchema) });
 
-  //const { UserRegister } = useContext(UserContext);
+  const { UserRegister } = useContext(UserContext);
 
   const submit = (data: TRegisterValues) => {
     console.log(data);
+    UserRegister(data)
   };
 
   return (
@@ -70,11 +74,8 @@ export const FormRegister = () => {
         backgroundC={'--grey-2'}
         textColor={'--grey-3'}
       />
-      <Button
-        text='Voltar'
-        backgroundC={'--color-secundary'}
-        textColor={'--color-primary'}
-      />
+
+      <Link to={"/"} replace>Voltar</Link>
       
     </StyledFormRegister>
   );
