@@ -20,7 +20,7 @@ export const StyleInput = styled.div`
 
   input {
     width: 100%;
-    height: 35px;
+    height: 40px;
     border-radius: 5px;
     background-color: var(--grey-0);
     text-indent: 10px;
