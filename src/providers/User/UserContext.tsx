@@ -17,10 +17,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
 
   const UserLogin = async (dataForm: TLoginValues) => {
     try {
-      const { data }: IDataLoginRequest = await Api.post(
-        'https://soundspaceapi.onrender.com/login',
-        dataForm
-      );
+      const { data }: IDataLoginRequest = await Api.post('/login', dataForm);
       setUser(data.user);
       localStorage.setItem('@SoundSpace:Token', data.accessToken);
     } catch (error) {

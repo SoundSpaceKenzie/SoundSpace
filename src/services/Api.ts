@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const Api = axios.create({
-  baseURL: 'https://soundspaceapi.onrender.com/login',
+  baseURL: 'https://soundspaceapi.onrender.com',
   timeout: 3000,
 });
 
