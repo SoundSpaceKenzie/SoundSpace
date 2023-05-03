@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { Header } from '../../Components/Header/index';
 import { ListPost } from '../../Components/ListPost/index';
 import { StyledDashboard } from './style';
-import { UserTitle } from '../../Components/UserTitle';
-import Modal from '../../Components/Modal/modal';
-import { Footer } from '../../Components/Footer';
+<<<<<<<<< Temporary merge branch 1
+import { Footer } from '../../components/Footer';
+=========
+import { useState } from 'react';
+>>>>>>>>> Temporary merge branch 2
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -15,9 +17,15 @@ export const DashBoard = () => {
     <StyledDashboard>
       <Header />
       <main>
-        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen}/>
-        <button onClick={()=> setModalOpen(true)}> abrir modal </button>
+<<<<<<<<< Temporary merge branch 1
+        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
+        <button onClick={() => setModalOpen(true)}> abrir modal </button>
         <UserTitle />
+=========
+        <main>
+          <ListPost />
+        </main>
+>>>>>>>>> Temporary merge branch 2
         <h1>Feed</h1>
         <ul>
           <li>
