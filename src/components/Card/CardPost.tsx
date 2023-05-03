@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../providers/User/UserContext";
 import { useSearchParams } from "react-router-dom";
 import { IUser } from "../../providers/User/@types";
+import { Spotify } from "react-spotify-embed";
 interface IProps {
   url: string;
   description: string;
@@ -31,11 +32,12 @@ export const CardPost = ({ url, idPost, description }: IProps) => {
         {/* <img src={user.avatar} alt="Usuário" />
         <p>{name}</p> */}
         
+        
       </div>
 
       <div>
         {url}
-        Card/Spotify
+        <Spotify link={url}></Spotify>
       </div>
         
 
