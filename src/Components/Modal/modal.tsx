@@ -1,8 +1,6 @@
 import { Dispatch, SetStateAction, useContext, useEffect, useRef, useState } from 'react';
 import { ModalStyled } from './style';
 import { PostContext } from '../../providers/Post/PostContex';
-import { Button } from '../Button';
-import { Input } from '../Input'
 
 
 
@@ -20,8 +18,8 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   
   const { CreatePost } = useContext(PostContext)
   
-  const submit = (data) => {
-    CreatePost(data)
+  const submit = (data:object) => {
+    // CreatePost(data)
   }
 
   
@@ -56,7 +54,7 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
             </select>
 
             <label> Link URL: </label>
-            <Input 
+            <input
               type='url'
               name='url'
               id='url'
@@ -71,10 +69,10 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
               placeholder='Digite aqui sua descrição...'
             />
 
-          <Button
-          text='Cadastrar'
-          backgroundC={'--grey-2'}
-          textColor={'--grey-3'}
+          <button
+          // text='Cadastrar'
+          // backgroundC={'--grey-2'}
+          // textColor={'--grey-3'}
          />
           </form>
         </ModalStyled>
