@@ -1,21 +1,20 @@
-import { FormRegister } from "../../components/Form/Form"
-
+import { FormRegister } from "../../components/Form/RegisterForm/Form"
+import Logo from '../../assets/imgs/logoSpaceSound.svg';
+import { StyleRegisterPage } from "./style";
 
 export const RegisterPage = () =>{
 
   return(
-    <main>
-      <div>
+    <StyleRegisterPage>
+      <div className="register_contanier">
         <div>
-          <img src="../assets/logoSpaceSound.svg" alt="logoSpaceSound"/>
+          <img src={Logo} alt="logoSpaceSound"/>
         </div>
-        <div>
-          <header>
+        <div className="contanier_form">
             <h1>Cadastro</h1>
-          </header>
           <FormRegister/>
         </div>
       </div>
-    </main>
+    </StyleRegisterPage>
   )
 }

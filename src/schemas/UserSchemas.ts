@@ -31,3 +31,4 @@ export const LoginSchema = z.object({
 });
 
 export type TLoginValues = z.infer<typeof LoginSchema>;
+export type TRegisterValues = z.infer<typeof RegisterSchema>;

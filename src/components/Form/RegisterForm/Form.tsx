@@ -1,30 +1,25 @@
-import { Button } from '../Button';
-import { Input } from '../Input/Input';
+import { Button } from '../../Button';
+import { Input } from '../../Input/Input';
 import { StyledFormRegister } from './styled';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { RegisterSchema } from '../../schemas/UserSchemas';
-// import { useContext } from 'react';
-
-export interface IRegisterFormData {
-  name: string;
-  email: string;
-  avatar: string;
-  password: string;
-  confirm: string;
-}
+import { RegisterSchema, TRegisterValues } from '../../../schemas/UserSchemas';
+import { UserContext } from '../../../providers/User/UserContext';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 export const FormRegister = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IRegisterFormData>({ resolver: zodResolver(RegisterSchema) });
+  } = useForm<TRegisterValues>({ resolver: zodResolver(RegisterSchema) });
 
-  //const { handleRegister } = useContext(UserContext);
+  const { UserRegister } = useContext(UserContext);
 
-  const submit = (data: object) => {
+  const submit = (data: TRegisterValues) => {
     console.log(data);
+    UserRegister(data);
   };
 
   return (
@@ -76,14 +71,13 @@ export const FormRegister = () => {
 
       <Button
         text='Cadastrar'
-        backgroundC={'var(--color-secundary)'}
-        textColor={'var(--color-primary)'}
+        backgroundC={'--grey-2'}
+        textColor={'--grey-3'}
       />
-      <Button
-        text='Voltar'
-        backgroundC={'var(--grey-2)'}
-        textColor={'var(--grey-3)'}
-      />
+
+      <Link to={'/'} replace>
+        Voltar
+      </Link>
     </StyledFormRegister>
   );
 };
