@@ -16,13 +16,14 @@ export const UserContext = createContext({} as IUserContext);
 export const UserProvider = ({ children }: IUserContextProps) => {
   const [User, setUser] = useState<IUser>(Object);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const UserLogin = async (dataForm: TLoginValues) => {
     try {
       const { data }: IDataLoginRequest = await Api.post('/login', dataForm);
       setUser(data.user);
       localStorage.setItem('@SoundSpace:Token', data.accessToken);
+      navigate('/dashboard');
     } catch (error) {
       const err = error as AxiosError;
       if (err.response?.data) {
@@ -31,24 +32,24 @@ export const UserProvider = ({ children }: IUserContextProps) => {
     }
   };
 
-  const UserRegister= async (data:TRegisterValues)=>{
-  const newData = {
-    name:data.name,
-    email:data.email,
-    avatar:data.avatar,
-    password:data.password
-  }
-  try {
-    const response = await Api.post('/register', newData)
-    toast.success('Conta criada com sucesso!');
-    navigate('/')
-  } catch (error) {
-    toast.error('E-mail já existe');
-  }
-  }
+  const UserRegister = async (data: TRegisterValues) => {
+    const newData = {
+      name: data.name,
+      email: data.email,
+      avatar: data.avatar,
+      password: data.password,
+    };
+    try {
+      const response = await Api.post('/register', newData);
+      toast.success('Conta criada com sucesso!');
+      navigate('/');
+    } catch (error) {
+      toast.error('E-mail já existe');
+    }
+  };
 
   return (
-    <UserContext.Provider value={{ UserLogin, User , UserRegister}}>
+    <UserContext.Provider value={{ UserLogin, User, UserRegister }}>
       {children}
     </UserContext.Provider>
   );
