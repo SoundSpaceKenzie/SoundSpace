@@ -1,9 +1,12 @@
+
+
 import { useState } from 'react';
-import Modal from '../../Components/Modal/modal';
-import { Header } from '../../components/Header';
-import { UserTitle } from '../../components/UserTitle';
+import { Header } from '../../Components/Header/index';
+import { ListPost } from '../../Components/ListPost/index';
 import { StyledDashboard } from './style';
-import { Footer } from '../../components/Footer';
+import { UserTitle } from '../../Components/UserTitle';
+import Modal from '../../Components/Modal/modal';
+import { Footer } from '../../Components/Footer';
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -12,8 +15,8 @@ export const DashBoard = () => {
     <StyledDashboard>
       <Header />
       <main>
-        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
-        <button onClick={() => setModalOpen(true)}> abrir modal </button>
+        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen}/>
+        <button onClick={()=> setModalOpen(true)}> abrir modal </button>
         <UserTitle />
         <h1>Feed</h1>
         <ul>

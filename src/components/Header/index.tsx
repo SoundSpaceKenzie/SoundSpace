@@ -1,3 +1,4 @@
+
 import { StyledHeader } from './styled';
 import ExitBTN from '../../assets/imgs/HeaderAssets/logout.png';
 import EmptyUserIcon from '../../assets/imgs/HeaderAssets/Empty-UserIcon.jpg';
@@ -16,3 +17,4 @@ export const Header = () => {
     </StyledHeader>
   );
 };
+
