@@ -3,16 +3,17 @@ import Modal from '../../Components/Modal/modal';
 import { Header } from '../../components/Header';
 import { UserTitle } from '../../components/UserTitle';
 import { StyledDashboard } from './style';
+import { Footer } from '../../components/Footer';
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  
+
   return (
     <StyledDashboard>
       <Header />
       <main>
-        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen}/>
-        <button onClick={()=> setModalOpen(true)}> abrir modal </button>
+        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
+        <button onClick={() => setModalOpen(true)}> abrir modal </button>
         <UserTitle />
         <h1>Feed</h1>
         <ul>
@@ -49,7 +50,7 @@ export const DashBoard = () => {
           </li>
         </ul>
       </aside>
-      <footer></footer>
+      <Footer />
     </StyledDashboard>
   );
 };
