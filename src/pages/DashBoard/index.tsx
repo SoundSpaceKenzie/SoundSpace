@@ -1,10 +1,13 @@
 import { Header } from '../../components/Header';
+import { UserTitle } from '../../components/UserTitle';
+import { StyledDashboard } from './style';
 
 export const DashBoard = () => {
   return (
-    <>
+    <StyledDashboard>
       <Header />
       <main>
+        <UserTitle />
         <h1>Feed</h1>
         <ul>
           <li>
@@ -41,6 +44,6 @@ export const DashBoard = () => {
         </ul>
       </aside>
       <footer></footer>
-    </>
+    </StyledDashboard>
   );
 };

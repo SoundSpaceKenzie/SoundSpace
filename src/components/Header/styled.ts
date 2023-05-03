@@ -8,7 +8,6 @@ export const StyledHeader = styled.header`
   padding: 10px;
   width: 100%;
   height: 80px;
-
   background-color: #1a001d;
   color: white;
   .Resp-container {
@@ -23,7 +22,7 @@ export const StyledHeader = styled.header`
       display: flex;
       justify-content: space-around;
       align-items: center;
-      gap: 15px;
+      gap: 25px;
       .UserIcon {
         width: 45px;
         height: 45px;
@@ -33,8 +32,8 @@ export const StyledHeader = styled.header`
         background-size: cover;
       }
       .ExitBtn {
-        width: 35px;
-        height: 35px;
+        width: 25px;
+        height: 25px;
       }
     }
   }
