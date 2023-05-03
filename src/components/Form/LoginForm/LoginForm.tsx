@@ -7,6 +7,7 @@ import { StyledFormLogin } from './style';
 import { Input } from '../../Input/Input';
 import { UserContext } from '../../../providers/User/UserContext';
 import { Button } from '../../Button';
+import React from 'react';
 
 const LoginForm = () => {
   const {
