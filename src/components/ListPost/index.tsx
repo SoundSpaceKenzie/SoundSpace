@@ -8,7 +8,8 @@ export const ListPost = () => {
   return (
     <ul>
       {posts.map((post) => (
-        <CardPost
+        <CardPost 
+          type ={post.type}
           key={post.id}
           url={post.link}
           description={post.description}
