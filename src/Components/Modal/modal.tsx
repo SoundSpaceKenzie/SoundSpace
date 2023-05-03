@@ -2,10 +2,13 @@ import { Dispatch, SetStateAction, useContext, useEffect, useRef, useState } fro
 import { ModalStyled } from './style';
 import { PostContext } from '../../providers/Post/PostContex';
 
-interface IProps {
+
+
+export interface IProps {
   modalOpen: boolean;
   setModalOpen: Dispatch<SetStateAction<boolean>>;
 }
+
 export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   const [text, setText] = useState('');
   const modalDialog = useRef<HTMLDialogElement>(null);
@@ -15,8 +18,8 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   
   const { CreatePost } = useContext(PostContext)
   
-  const submit = (data) => {
-    CreatePost(data)
+  const submit = (data:object) => {
+    // CreatePost(data)
   }
 
   
@@ -34,13 +37,14 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
         <ModalStyled className='main__container'>
           <form onSubmit={submit} className='modal__form'>
             <div className='header__form'>
-            <h1 className='title__form'>Cadastrar Post</h1>
-            <button className='close__button'
-              onClick={() => setModalOpen(false)}
-            >
-              {' '}
-              X{' '}
-            </button>
+              <h1 className='title__form'>Criar Post</h1>
+              <button
+                className='close__button'
+                onClick={() => setModalOpen(false)}
+              >
+                {' '}
+                X{' '}
+              </button>
             </div>
 
             <label> Url vindo do: </label>
@@ -50,7 +54,7 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
             </select>
 
             <label> Link URL: </label>
-            <input 
+            <input
               type='url'
               name='url'
               id='url'
@@ -65,7 +69,11 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
               placeholder='Digite aqui sua descrição...'
             />
 
-            <button className='button__post' > Postar </button>
+          <button
+          // text='Cadastrar'
+          // backgroundC={'--grey-2'}
+          // textColor={'--grey-3'}
+         />
           </form>
         </ModalStyled>
       </dialog>

@@ -1,12 +1,14 @@
 
 
-import { Header } from '../../components/Header';
-import { ListPost } from '../../components/ListPost';
-import { StyledDashboard } from './style';
-
-import { Footer } from '../../components/Footer';
-
 import { useState } from 'react';
+import { Header } from '../../Components/Header/index';
+import { ListPost } from '../../Components/ListPost/index';
+import { StyledDashboard } from './style';
+import { UserTitle } from '../../Components/UserTitle';
+import Modal from '../../Components/Modal/modal';
+import { Footer } from '../../Components/Footer';
+
+
 
 
 export const DashBoard = () => {
@@ -43,8 +45,10 @@ export const DashBoard = () => {
 
       <aside>
         <ul>
-          <li>Criar Post</li>
-          <li>Buscar</li>
+          <li>
+            <button> Criar Post </button>
+            <span>Buscar</span>
+          </li>
         </ul>
       </aside>
       <aside>
@@ -60,7 +64,7 @@ export const DashBoard = () => {
           </li>
         </ul>
       </aside>
-      <Footer />
+      <Footer setModalOpen={setModalOpen} modalOpen={modalOpen}/>
     </StyledDashboard>
   );
 };

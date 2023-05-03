@@ -17,7 +17,10 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
+<<<<<<< HEAD
+=======
     "react-player": "^2.12.0",
+>>>>>>> e549ab9478bd335b0b9d64c59180f75b82837204
     "react-router-dom": "^6.11.0",
     "react-spotify-embed": "^2.0.3",
     "react-toastify": "^9.1.2",

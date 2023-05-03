@@ -1,6 +1,6 @@
 import { Button } from '../../Button';
 import { Input } from '../../Input/Input';
-import { StyledFormRegister } from './styled';
+import { StyledFormRegister } from './styled'
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { RegisterSchema, TRegisterValues } from '../../../schemas/UserSchemas';
