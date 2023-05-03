@@ -17,6 +17,16 @@ export const PostProvider = ({children}: IPostProps ) => {
   
   const [posts, setPosts ] = useState <IPost[]>  ([])
   
+   const CreatePost =  async (data) => {
+     try {
+      const response = await Api.post("/posts", data, config);
+      console.log(response)
+      
+    } catch (error) {
+      console.log(error)
+    }
+   }
+   
   useEffect(() => {
     const GetPosts = async () => {
       try{
@@ -32,7 +42,7 @@ export const PostProvider = ({children}: IPostProps ) => {
   }, [])
   
   return(
-      <PostContext.Provider value={{posts}}>
+      <PostContext.Provider value={{posts,CreatePost }}>
         {children}
       </PostContext.Provider>   
   )

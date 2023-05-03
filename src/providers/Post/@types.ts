@@ -4,7 +4,10 @@ export interface IPostProps {
 
 export interface IPostContext {
   posts: IPost[];
+  CreatePost: (data: IPost ) => Promise<void>
 }
+  
+  
 
 export interface IData {
   data: [IPost];
@@ -28,4 +31,13 @@ export interface ILike {
 interface IUser {
   name: string;
   avatar: string;
+}
+
+
+interface IDataPost {
+  description: string;
+  link: string;
+  type: string;
+  like: [ILike];
+  userId: number;
 }
