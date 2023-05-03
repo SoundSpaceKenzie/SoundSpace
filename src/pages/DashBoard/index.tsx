@@ -1,10 +1,11 @@
 export const DashBoard = () => {
    return(
     <>
-     <header>
+     <header className="">
      <img src="" alt=" Logo SoundSpace" />
      <img src="" alt="Login Usuário" />
-     <button>Logout</button>
+     <button></button>
+    
      </header>
      <main>
       <h1>
