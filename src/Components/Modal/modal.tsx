@@ -1,6 +1,8 @@
 import { Dispatch, SetStateAction, useContext, useEffect, useRef, useState } from 'react';
 import { ModalStyled } from './style';
 import { PostContext } from '../../providers/Post/PostContex';
+import { Button } from '../Button';
+import { Input } from '../Input/Input';
 
 interface IProps {
   modalOpen: boolean;
@@ -50,7 +52,7 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
             </select>
 
             <label> Link URL: </label>
-            <input 
+            <Input 
               type='url'
               name='url'
               id='url'
@@ -65,7 +67,8 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
               placeholder='Digite aqui sua descrição...'
             />
 
-            <button className='button__post' > Postar </button>
+            <Button text={"postar"} backgroundC={"--color-primary"} textColor={"--grey-0"}
+             />
           </form>
         </ModalStyled>
       </dialog>
