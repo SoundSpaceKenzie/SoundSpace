@@ -1,20 +1,21 @@
-export const CardPost = () => {
+export const CardPost = ({name, profileImage, imagem, description, comments }) => {
   return(
-    <li>
+    <div>
       <div>
-        <img src="" alt="" />
-        <p>Nome: Pessoa</p>
+        <img src={imagem} alt=""  />
+        <p>{name} {profileImage}</p>
         
       </div>
 
       <div>
-        Card/Spotify
+        <img src={imagem} alt="" />
       </div>
 
-      <img src="" alt="" />
-      <img src="" alt="" />
+      <div>{description}</div>
+      <div>{comments}</div>
       
-    </li>
-
+    </div>
   )
 }
+
+
