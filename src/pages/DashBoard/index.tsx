@@ -52,7 +52,7 @@ export const DashBoard = () => {
           </li>
         </ul>
       </aside>
-      <Footer />
+      <Footer setModalOpen={setModalOpen} modalOpen={modalOpen}/>
     </StyledDashboard>
   );
 };

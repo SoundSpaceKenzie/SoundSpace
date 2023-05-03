@@ -1,10 +1,11 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { ModalStyled } from './style';
 
-interface IProps {
+export interface IProps {
   modalOpen: boolean;
   setModalOpen: Dispatch<SetStateAction<boolean>>;
 }
+
 export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   const [text, setText] = useState('');
   const modalDialog = useRef<HTMLDialogElement>(null);
@@ -25,13 +26,14 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
         <ModalStyled className='main__container'>
           <form className='modal__form'>
             <div className='header__form'>
-            <h1 className='title__form'>Criar Post</h1>
-            <button className='close__button'
-              onClick={() => setModalOpen(false)}
-            >
-              {' '}
-              X{' '}
-            </button>
+              <h1 className='title__form'>Criar Post</h1>
+              <button
+                className='close__button'
+                onClick={() => setModalOpen(false)}
+              >
+                {' '}
+                X{' '}
+              </button>
             </div>
 
             <label> Url vindo do: </label>

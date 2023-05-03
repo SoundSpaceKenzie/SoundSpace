@@ -17,6 +17,8 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   const [User, setUser] = useState<IUser>(Object);
   const [Users, setUsers] = useState<IUser[]>([]);
 
+
+
   const navigate = useNavigate();
 
   const GetAllUsers = async (token: string) => {
