@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import {
   IUser,
@@ -15,14 +15,27 @@ export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IUserContextProps) => {
   const [User, setUser] = useState<IUser>(Object);
+  const [Users, setUsers] = useState<IUser[]>([]);
 
   const navigate = useNavigate();
+
+  const GetAllUsers = async (token: string) => {
+    try {
+      const { data } = await Api.get('/users', {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setUsers(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const UserLogin = async (dataForm: TLoginValues) => {
     try {
       const { data }: IDataLoginRequest = await Api.post('/login', dataForm);
       setUser(data.user);
       localStorage.setItem('@SoundSpace:Token', data.accessToken);
+      GetAllUsers(data.accessToken);
       navigate('/dashboard');
     } catch (error) {
       const err = error as AxiosError;
@@ -49,7 +62,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ UserLogin, User, UserRegister }}>
+    <UserContext.Provider value={{ UserLogin, User, UserRegister, Users }}>
       {children}
     </UserContext.Provider>
   );

@@ -7,7 +7,8 @@ export interface IUserContextProps {
 export interface IUserContext {
   UserLogin: (data: TLoginValues) => Promise<void>;
   User: IUser;
-  UserRegister:(data: TRegisterValues) => Promise<void>;
+  Users: IUser[];
+  UserRegister: (data: TRegisterValues) => Promise<void>;
 }
 
 export interface IUser {
