@@ -1,5 +1,6 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useContext, useEffect, useRef, useState } from 'react';
 import { ModalStyled } from './style';
+import { PostContext } from '../../providers/Post/PostContex';
 
 interface IProps {
   modalOpen: boolean;
@@ -11,6 +12,14 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
   function handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
     setText(event.target.value);
   }
+  
+  const { CreatePost } = useContext(PostContext)
+  
+  const submit = (data) => {
+    CreatePost(data)
+  }
+
+  
   useEffect(() => {
     if (modalOpen) {
       console.log(modalOpen);
@@ -23,7 +32,7 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
     <>
       <dialog ref={modalDialog}>
         <ModalStyled className='main__container'>
-          <form className='modal__form'>
+          <form onSubmit={submit} className='modal__form'>
             <div className='header__form'>
             <h1 className='title__form'>Cadastrar Post</h1>
             <button className='close__button'
@@ -41,7 +50,7 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
             </select>
 
             <label> Link URL: </label>
-            <input
+            <input 
               type='url'
               name='url'
               id='url'
@@ -56,7 +65,7 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
               placeholder='Digite aqui sua descrição...'
             />
 
-            <button className='button__post'> Postar </button>
+            <button className='button__post' > Postar </button>
           </form>
         </ModalStyled>
       </dialog>

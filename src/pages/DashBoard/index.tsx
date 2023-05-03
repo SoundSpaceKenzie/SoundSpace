@@ -1,9 +1,13 @@
-import { useState } from 'react';
-import Modal from '../../Components/Modal/modal';
+
+
 import { Header } from '../../components/Header';
-import { UserTitle } from '../../components/UserTitle';
+import { ListPost } from '../../components/ListPost';
 import { StyledDashboard } from './style';
+
 import { Footer } from '../../components/Footer';
+
+import { useState } from 'react';
+
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -12,9 +16,15 @@ export const DashBoard = () => {
     <StyledDashboard>
       <Header />
       <main>
+
         <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
         <button onClick={() => setModalOpen(true)}> abrir modal </button>
         <UserTitle />
+
+        <main>
+          <ListPost />
+        </main>
+
         <h1>Feed</h1>
         <ul>
           <li>
