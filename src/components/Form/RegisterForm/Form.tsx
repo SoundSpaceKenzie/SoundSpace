@@ -19,7 +19,7 @@ export const FormRegister = () => {
 
   const submit = (data: TRegisterValues) => {
     console.log(data);
-    UserRegister(data)
+    UserRegister(data);
   };
 
   return (
@@ -75,8 +75,10 @@ export const FormRegister = () => {
         textColor={'--grey-3'}
       />
 
+
       <Link to={"/"} replace>Voltar</Link>
       
+
     </StyledFormRegister>
   );
 };
