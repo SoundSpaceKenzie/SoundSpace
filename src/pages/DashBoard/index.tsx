@@ -3,6 +3,7 @@ import Modal from '../../Components/Modal/modal';
 import { Header } from '../../components/Header';
 import { UserTitle } from '../../components/UserTitle';
 import { StyledDashboard } from './style';
+import { Footer } from '../../components/Footer';
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -51,7 +52,7 @@ export const DashBoard = () => {
           </li>
         </ul>
       </aside>
-      <footer></footer>
+      <Footer />
     </StyledDashboard>
   );
 };
