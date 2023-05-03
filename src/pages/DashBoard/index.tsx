@@ -3,18 +3,28 @@
 import { Header } from '../../components/Header';
 import { ListPost } from '../../components/ListPost';
 import { StyledDashboard } from './style';
+
+import { Footer } from '../../components/Footer';
+
 import { useState } from 'react';
+
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  
+
   return (
     <StyledDashboard>
       <Header />
       <main>
+
+        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
+        <button onClick={() => setModalOpen(true)}> abrir modal </button>
+        <UserTitle />
+
         <main>
           <ListPost />
         </main>
+
         <h1>Feed</h1>
         <ul>
           <li>
@@ -50,7 +60,7 @@ export const DashBoard = () => {
           </li>
         </ul>
       </aside>
-      <footer></footer>
+      <Footer />
     </StyledDashboard>
   );
 };
