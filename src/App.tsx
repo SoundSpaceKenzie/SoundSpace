@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Rout from './Routes';
+import { GlobalStyle } from './styles/GlobalStyle';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h2>soundSpace</h2>
+      <GlobalStyle />
+      <ToastContainer />
+      <Rout />
     </>
   );
 }
