@@ -75,9 +75,10 @@ export const FormRegister = () => {
         textColor={'--grey-3'}
       />
 
-      <Link to={'/'} replace>
-        Voltar
-      </Link>
+
+      <Link to={"/"} replace>Voltar</Link>
+      
+
     </StyledFormRegister>
   );
 };
