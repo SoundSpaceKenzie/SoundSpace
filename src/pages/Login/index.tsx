@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-
 import LoginForm from '../../components/Form/LoginForm/LoginForm';
 import Logo from '../../assets/imgs/logoSpaceSound.svg';
 import { StyleLoginPage } from './style';
