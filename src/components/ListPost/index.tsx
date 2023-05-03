@@ -4,6 +4,7 @@ import { CardPost } from '../Card/CardPost';
 
 export const ListPost = () => {
   const { posts } = useContext(PostContext);
+  const test = 0
 
   return (
     <ul>
