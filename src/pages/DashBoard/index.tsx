@@ -5,8 +5,10 @@ import { ListPost } from '../../components/ListPost';
 
 
 export const DashBoard = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  
   return (
-    <>
+    <StyledDashboard>
       <Header />
       <main>
         <main>
@@ -48,6 +50,6 @@ export const DashBoard = () => {
         </ul>
       </aside>
       <footer></footer>
-    </>
+    </StyledDashboard>
   );
 };

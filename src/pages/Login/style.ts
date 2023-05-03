@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const StyleLoginPage = styled.main`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #1a001d;
-
+  justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,14 +12,16 @@ export const StyleLoginPage = styled.main`
   padding: 2rem 2.5rem;
 
   .Login-Container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 300px;
+    padding-bottom: 15px;
 
     img {
-      width: 157px;
-      height: 107px;
+      width: 145px;
+      height: 126px;
     }
 
     #Login-Container_title {
