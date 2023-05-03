@@ -4,7 +4,7 @@ import { StyledFormRegister } from './styled';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { RegisterSchema } from '../../schemas/UserSchemas';
-import { useContext } from 'react';
+// import { useContext } from 'react';
 
 export interface IRegisterFormData {
   name: string;
