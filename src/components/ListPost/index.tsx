@@ -9,7 +9,7 @@ export const ListPost = () =>{
   return(
       <ul>
         { posts.map(post => (
-         <CardPost key={post.id} url={post.link} description={post.description} />
+         <CardPost idPost={post.useId} key={post.id} url={post.link} description={post.description} />
         ))}
       </ul>
   )

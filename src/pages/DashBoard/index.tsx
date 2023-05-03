@@ -2,7 +2,8 @@
 
 import { Header } from '../../components/Header';
 import { ListPost } from '../../components/ListPost';
-
+import { StyledDashboard } from './style';
+import { useState } from 'react';
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
