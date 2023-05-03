@@ -6,13 +6,13 @@ import { StyledDashboard } from './style';
 
 export const DashBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  
+
   return (
     <StyledDashboard>
       <Header />
       <main>
-        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen}/>
-        <button onClick={()=> setModalOpen(true)}> abrir modal </button>
+        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} />
+        <button onClick={() => setModalOpen(true)}> abrir modal </button>
         <UserTitle />
         <h1>Feed</h1>
         <ul>
@@ -32,8 +32,10 @@ export const DashBoard = () => {
 
       <aside>
         <ul>
-          <li>Criar Post</li>
-          <li>Buscar</li>
+          <li>
+            <button> Criar Post </button>
+            <span>Buscar</span>
+          </li>
         </ul>
       </aside>
       <aside>

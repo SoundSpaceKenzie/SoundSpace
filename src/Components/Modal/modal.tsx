@@ -25,7 +25,7 @@ export const Modal = ({ modalOpen, setModalOpen }: IProps) => {
         <ModalStyled className='main__container'>
           <form className='modal__form'>
             <div className='header__form'>
-            <h1 className='title__form'>Cadastrar Post</h1>
+            <h1 className='title__form'>Criar Post</h1>
             <button className='close__button'
               onClick={() => setModalOpen(false)}
             >
