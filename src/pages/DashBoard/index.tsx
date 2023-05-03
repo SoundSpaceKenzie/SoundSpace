@@ -1,12 +1,18 @@
+import { useState } from 'react';
+import Modal from '../../Components/Modal/modal';
 import { Header } from '../../components/Header';
 import { UserTitle } from '../../components/UserTitle';
 import { StyledDashboard } from './style';
 
 export const DashBoard = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  
   return (
     <StyledDashboard>
       <Header />
       <main>
+        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen}/>
+        <button onClick={()=> setModalOpen(true)}> abrir modal </button>
         <UserTitle />
         <h1>Feed</h1>
         <ul>
