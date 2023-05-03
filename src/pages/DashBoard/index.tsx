@@ -1,6 +1,7 @@
 
 
 import { Header } from '../../components/Header';
+import { ListPost } from '../../components/ListPost';
 
 
 export const DashBoard = () => {
@@ -8,6 +9,9 @@ export const DashBoard = () => {
     <>
       <Header />
       <main>
+        <main>
+          <ListPost />
+        </main>
         <h1>Feed</h1>
         <ul>
           <li>
